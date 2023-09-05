@@ -14,15 +14,14 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>
 
-defined('MOODLE_INTERNAL') || die;
+// defined('MOODLE_INTERNAL') || die;
 
 require('../../config.php');
-require_once('lib.php');
 require_once($CFG->libdir . '/csvlib.class.php');
 require_once($CFG->dirroot . '/local/emailsender/userform.php');
 require_once($CFG->dirroot . '/local/emailsender/classes/preview.php');
 //Checking the capability
-if (has_capability('local/emailsender:managefiles', context_system::instance())) {
+// if (has_capability('local/emailsender:managefiles', context_system::instance())) {
     $iid         = optional_param('iid', '', PARAM_INT);
     $previewrows = optional_param('previewrows', 10, PARAM_INT);
     $PAGE->set_context(context_system::instance());
@@ -122,6 +121,7 @@ if (has_capability('local/emailsender:managefiles', context_system::instance()))
     }
     echo $OUTPUT->footer();
     die;
-} else {
-    throw new \moodle_exception('nopermissiontoaccesspage', '', $CFG->wwwroot);
-}
+// } 
+// else {
+//     throw new \moodle_exception('nopermissiontoaccesspage', '', $CFG->wwwroot);
+// }
